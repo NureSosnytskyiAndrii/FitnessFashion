@@ -19,6 +19,7 @@ use System\classes\User;
 
         <link rel="stylesheet" href="blocks/header/css/normalize.css">
         <link rel="stylesheet" href="blocks/header/css/style.css">
+        <link rel="stylesheet" href="pages/styles/carousel.css">
         <script src="blocks/header/js/main.js"></script>
         <title>FitnessFashion</title>
     </head>
@@ -26,7 +27,7 @@ use System\classes\User;
 <header class="header">
     <div class="container header__container">
     <a href="/?page=main" class="logo">
-        <img class="logo__img" src="blocks/header/logos/IMG_1606.PNG" alt="Logo"/>
+        <img class="logo__img rounded" src="blocks/header/logos/IMG_1606.PNG" alt="Logo"/>
     </a>
 
     <button class="header__burger-btn" id="burger">

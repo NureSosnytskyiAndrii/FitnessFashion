@@ -75,10 +75,6 @@ $user_avatar = mysqli_fetch_assoc($user_avatar);
                         <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->email ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
-                        <label>User role</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->user_role ?: "Not filled"; ?>"/>
-                    </div>
-                    <div class="form-group">
                         <label>Contact info</label>
                         <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->contact_info ?: "Not filled"; ?>"/>
                     </div>
@@ -86,6 +82,7 @@ $user_avatar = mysqli_fetch_assoc($user_avatar);
                         <label>Profile description</label>
                         <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->profile_description ?: "Not filled"; ?>"/>
                     </div>
+                    <a type="button" class="btn btn-light" href="/?page=profile_edit">Change profile</a>
                 </div>
             </div>
         </div>

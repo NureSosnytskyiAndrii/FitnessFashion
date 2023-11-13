@@ -74,6 +74,9 @@ if (isset($_GET['page'])) {
         case "profile_settings":
             require_once "pages/user_profile/profile_view.php";
             break;
+        case "profile_edit":
+            require_once "pages/user_profile/profile_edit.php";
+            break;
 
         default:
             require_once "pages/404.php";
