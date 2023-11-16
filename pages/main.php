@@ -7,9 +7,6 @@
         <button class="carousel-button next" data-carousel-button="next">&#8658</button>
     <ul data-slides>
         <li class="slide" data-active>
-            <img src="../src/2.jpeg" alt="">
-        </li>
-        <li class="slide">
             <img src="../src/24.jpg" alt="">
         </li>
         <li class="slide">

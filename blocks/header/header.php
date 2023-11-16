@@ -37,8 +37,8 @@ use System\classes\User;
     <nav class="menu" id="menu">
     <ul class="menu__list">
     <li class="menu__item">
-        <a class="menu__link" href="#">
-            About
+        <a class="menu__link text-primary" href="/?page=health_tips_page">
+            Health tips
         </a>
     </li>
         <?php
