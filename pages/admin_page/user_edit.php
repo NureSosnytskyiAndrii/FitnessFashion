@@ -3,7 +3,7 @@
 global $mysqli;
 if (isset($_GET['id'])) {
 
-    if(isset($_POST['username'])){
+    if (isset($_POST['username'])) {
         $user_id = $_GET['id'];
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
         WHERE condition;
          *
          * */
-        if(!empty($password)) {
+        if (!empty($password)) {
             $upd = $mysqli->query("
         UPDATE 
             users
@@ -79,49 +79,69 @@ if (isset($_GET['id'])) {
                     <form method="post">
                         <div class="form-group">
                             <label>ID</label>
-                            <input type="text" class="form-control" disabled="disabled" value="<?= $user_info->user_id; ?>">
+                            <input type="text" class="form-control" disabled="disabled"
+                                   value="<?= $user_info->user_id; ?>">
                         </div>
                         <div class="form-group">
                             <label>Login</label>
-                            <input type="text" name="username" class="form-control"  value="<?php echo $user_info->username; ?>"/>
+                            <input type="text" name="username" class="form-control"
+                                   value="<?php echo $user_info->username; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="text" name="password" class="form-control"  value=""/>
+                            <input type="text" name="password" class="form-control" value=""/>
                             <small>Leave empty if you don`t want to change password</small>
                         </div>
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" name="first_name" class="form-control"  value="<?php echo $user_info->name; ?>"/>
+                            <input type="text" name="first_name" class="form-control"
+                                   value="<?php echo $user_info->name; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" name="last_name" class="form-control"  value="<?php echo $user_info->surname; ?>"/>
+                            <input type="text" name="last_name" class="form-control"
+                                   value="<?php echo $user_info->surname; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" name="email" placeholder="Enter email..." class="form-control"  value="<?php echo $user_info->email; ?>"/>
+                            <input type="text" name="email" placeholder="Enter email..." class="form-control"
+                                   value="<?php echo $user_info->email; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>Contact info</label>
-                            <input type="text" name="contact_info" placeholder="Enter contact info..." class="form-control"  value="<?php echo $user_info->contact_info; ?>"/>
+                            <input type="text" name="contact_info" placeholder="Enter contact info..."
+                                   class="form-control" value="<?php echo $user_info->contact_info; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>Profile description</label>
-                            <input type="text" name="email" placeholder="Enter profile description..." class="form-control"  value="<?php echo $user_info->profile_description; ?>"/>
+                            <input type="text" name="email" placeholder="Enter profile description..."
+                                   class="form-control" value="<?php echo $user_info->profile_description; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>User role</label>
                             <select name="status" class="form-control">
-                                <option value="admin" <?php if($user_info->status == "admin") { echo  'selected="selected"'; } ?> >Administrator</option>
-                                <option value="moder" <?php if($user_info->status == "moder") { echo  'selected="selected"'; } ?> >Moderator</option>
-                                <option value="trainer" <?php if($user_info->status == "trainer") { echo  'selected="selected"'; } ?> >Trainer</option>
-                                <option value="user" <?php if($user_info->status == "user") { echo  'selected="selected"'; } ?> >User</option>
+                                <option value="admin" <?php if ($user_info->status == "admin") {
+                                    echo 'selected="selected"';
+                                } ?> >Administrator
+                                </option>
+                                <option value="moder" <?php if ($user_info->status == "moder") {
+                                    echo 'selected="selected"';
+                                } ?> >Moderator
+                                </option>
+                                <option value="trainer" <?php if ($user_info->status == "trainer") {
+                                    echo 'selected="selected"';
+                                } ?> >Trainer
+                                </option>
+                                <option value="user" <?php if ($user_info->status == "user") {
+                                    echo 'selected="selected"';
+                                } ?> >User
+                                </option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Is banned</label>
-                            <input type="number" name="is_banned" placeholder="Enter 1 if want to ban user..." class="form-control"  value="<?php echo $user_info->is_banned; ?>"/>
+                            <input type="number" name="is_banned" placeholder="Enter 1 if want to ban user..."
+                                   class="form-control" value="<?php echo $user_info->is_banned; ?>"/>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block">Save Changes</button>

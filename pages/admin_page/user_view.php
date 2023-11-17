@@ -20,35 +20,42 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="form-group">
                         <label>Avatar</label>
-                        <img src="" />
+                        <img src=""/>
                     </div>
                     <div class="form-group">
                         <label>Login</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->username ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->username ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->name ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->name ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->surname ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->surname ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->email ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->email ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
                         <label>User role</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->user_role ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->user_role ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
                         <label>Contact info</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->contact_info ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->contact_info ?: "Not filled"; ?>"/>
                     </div>
                     <div class="form-group">
                         <label>Profile description</label>
-                        <input type="text" class="form-control" disabled="disabled" value="<?php echo $user_info->profile_description ?: "Not filled"; ?>"/>
+                        <input type="text" class="form-control" disabled="disabled"
+                               value="<?php echo $user_info->profile_description ?: "Not filled"; ?>"/>
                     </div>
 
                 </div>

@@ -1,19 +1,19 @@
 <?php
 global $mysqli;
 
-if(isset($_GET['action']) && $_GET['action'] == "ban"){
-    $mysqli->query("UPDATE `users` SET is_banned = 1 WHERE user_id='".$_GET['id']."'") or die($mysqli->error);
+if (isset($_GET['action']) && $_GET['action'] == "ban") {
+    $mysqli->query("UPDATE `users` SET is_banned = 1 WHERE user_id='" . $_GET['id'] . "'") or die($mysqli->error);
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    User with ID = '.$_GET['id'].' was banned!
+    User with ID = ' . $_GET['id'] . ' was banned!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>';
 }
-if(isset($_GET['action']) && $_GET['action'] == "unban"){
-    $mysqli->query("UPDATE `users` SET is_banned = 0 WHERE user_id='".$_GET['id']."'") or die($mysqli->error);
+if (isset($_GET['action']) && $_GET['action'] == "unban") {
+    $mysqli->query("UPDATE `users` SET is_banned = 0 WHERE user_id='" . $_GET['id'] . "'") or die($mysqli->error);
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-    User with ID = '.$_GET['id'].' was unbanned!
+    User with ID = ' . $_GET['id'] . ' was unbanned!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

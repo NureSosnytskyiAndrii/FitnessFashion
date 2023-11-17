@@ -1,10 +1,10 @@
 <?php
 global $mysqli;
 
-if(isset($_GET['do']) && $_GET['do'] == "delete"){
-    $mysqli->query("DELETE FROM users WHERE user_id='".$_GET['id']."'") or die($mysqli->error);
+if (isset($_GET['do']) && $_GET['do'] == "delete") {
+    $mysqli->query("DELETE FROM users WHERE user_id='" . $_GET['id'] . "'") or die($mysqli->error);
     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Success!</strong> User with ID = '.$_GET['id'].' have been removed!
+  <strong>Success!</strong> User with ID = ' . $_GET['id'] . ' have been removed!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

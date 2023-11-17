@@ -85,7 +85,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     const userRoleSelect = document.getElementById("userRoleSelect");
     const trainerField = document.getElementById("trainerField");
 
-    userRoleSelect.addEventListener("change", function() {
+    userRoleSelect.addEventListener("change", function () {
         if (userRoleSelect.value === "trainer") {
             trainerField.style.display = "block";
         } else {
