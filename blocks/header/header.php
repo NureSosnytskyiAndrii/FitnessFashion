@@ -16,6 +16,7 @@ use System\classes\User;
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
         <link rel="stylesheet" href="blocks/header/css/normalize.css">
         <link rel="stylesheet" href="blocks/header/css/style.css">
@@ -37,7 +38,13 @@ use System\classes\User;
     <nav class="menu" id="menu">
     <ul class="menu__list">
     <li class="menu__item">
-        <a class="menu__link text-primary" href="/?page=health_tips_page">
+        <a class="menu__link mr-4 ml-4" href="#">
+           Training
+        </a>
+        <a class="menu__link mr-4 ml-4" href="#">
+            FAQ
+        </a>
+        <a class="menu__link mr-4 ml-4" href="/?page=health_tips_page">
             Health tips
         </a>
     </li>

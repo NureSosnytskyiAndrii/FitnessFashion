@@ -3,7 +3,7 @@ global $mysqli;
 
 ?>
 
-<div class="container" style="background: url('../src/2.jpeg'); width: 100%; height:100vh;">
+<div class="container" style="background: url('../src/2.jpeg'); width: 100%; height:200vh; ">
     <h2 class="text-warning" style="display: flex; justify-content: center">Health tips page</h2>
 
     <?php

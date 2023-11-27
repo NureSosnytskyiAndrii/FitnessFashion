@@ -80,6 +80,12 @@ if (isset($_GET['page'])) {
         case "health_tips_page":
             require_once "pages/health_tips_page.php";
             break;
+        case "exercises_categories":
+            require_once "pages/exercises_page/categories.php";
+            break;
+        case "exercises_page":
+            require_once "pages/exercises_page/exercises_page.php";
+            break;
         default:
             require_once "pages/404.php";
     }
