@@ -1,6 +1,8 @@
 <?php
 global $mysqli;
 
+use System\classes\User;
+
 $search = '';
 ?>
 <script>
@@ -68,6 +70,14 @@ $search = '';
                             <p class="card-text"><?php echo $row['description']; ?></p>
                             <p class="card-text"><strong>Difficulty:</strong> <?php echo $row['difficulty']; ?></p>
                             <p class="card-text"><strong>Tags:</strong> <?php echo $row['tags']; ?></p>
+                            <?php
+                            /* check user auth */
+                            if (isset($_SESSION['username']) && $_SESSION['uid']) {
+                                $user_obj = new User();
+                                $user = $user_obj->getUserById($_SESSION['uid']);
+                                echo ' <p class="card-text"><a type="button" class="btn btn-small btn-light">Add to personal training</a></p>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

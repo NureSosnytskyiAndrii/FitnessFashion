@@ -55,14 +55,15 @@ use System\classes\User;
             $user_first_name = $user['name'];
             $user_last_name = $user['surname'];
         ?>
-        <div class="dropdown show text-primary">
+        <div class="dropdown show text-white">
             <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php echo $user_first_name . '&nbsp;' . $user_last_name; ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="../../logout.php">Log out</a>
-                <a class="dropdown-item" href="/?page=profile_settings">Налаштування профілю</a>
+                <a class="dropdown-item" href="/?page=profile_settings">Profile settings</a>
+                <a class="dropdown-item" href="/?page=personal_trainings">Personal trainings</a>
                 <?php
                 if ($user['user_role'] == "admin") {
                     ?>

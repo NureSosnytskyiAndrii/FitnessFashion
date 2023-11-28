@@ -86,6 +86,13 @@ if (isset($_GET['page'])) {
         case "exercises_page":
             require_once "pages/exercises_page/exercises_page.php";
             break;
+        case "personal_trainings":
+            $user_obj = new User();
+            $user = $user_obj->getUserById($_SESSION['uid']);
+            if ($user['user_role'] == "user") {
+                require_once "pages/exercises_page/personal_trainings.php";
+            }
+            break;
         default:
             require_once "pages/404.php";
     }
