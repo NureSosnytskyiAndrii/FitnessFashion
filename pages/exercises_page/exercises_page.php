@@ -4,6 +4,28 @@ global $mysqli;
 use System\classes\User;
 
 $search = '';
+
+if (isset($_GET['action']) && $_GET['action'] === 'add') {
+
+    $userId = $_SESSION['uid'];
+    $exercise_id = $_GET['exercise_id'];
+
+    // Update exercise table
+    $sql = "UPDATE exercise SET user_id = ? WHERE exercise_id='$exercise_id'";
+    $stmt = $mysqli->prepare($sql);
+
+    if ($stmt) {
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $stmt->close();
+    }
+    echo '<div style="margin-top: 5px;" class="alert alert-primary alert-dismissible fade show" role="alert">
+        Exercise was added to personal training.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+        </button>
+        </div>';
+}
 ?>
 <script>
     function performAction(action) {
@@ -22,13 +44,13 @@ $search = '';
     }
 </script>
 <div class="container mb-2 mt-2">
-    <h2><span style="background-color: #6e6185; border-radius: 5px;"> &nbsp;Exercises for you&nbsp; </span></h2>
+    <h2 style="display: flex; justify-content: center;"><span style="color: #6e6185; border-radius: 5px;"> &nbsp;Exercises for you&nbsp; </span></h2>
     <form method="GET" action="">
         <div class="form-group">
             <label for="search">Search:</label>
             <input type="text" class="form-control" id="search" name="search" placeholder="Enter exercise name">
         </div>
-        <button type="button" class="btn btn-primary" onclick="performAction('search')">Search</button>
+        <button type="button" class="btn" style="background-color:#be9ded; color: #39285e;" onclick="performAction('search')">Search</button>
     </form>
     <form method="GET" action="">
         <div class="form-group">
@@ -38,7 +60,7 @@ $search = '';
                 <option value="desc">High to Low</option>
             </select>
         </div>
-        <button type="button" class="btn btn-primary" onclick="performAction('sort')">Search</button>
+        <button type="button" class="btn" style="background-color:#be9ded; color: #39285e;" onclick="performAction('sort')">Search</button>
     </form>
     <div class="row">
         <?php
@@ -75,7 +97,8 @@ $search = '';
                             if (isset($_SESSION['username']) && $_SESSION['uid']) {
                                 $user_obj = new User();
                                 $user = $user_obj->getUserById($_SESSION['uid']);
-                                echo ' <p class="card-text"><a type="button" class="btn btn-small btn-light">Add to personal training</a></p>';
+                                echo '<p class="card-text"><a type="button" href="/?page=exercises_page&action=add&exercise_id=' . $row['exercise_id'] . '" class="btn btn-small" style="border: 2px solid #c8aaf2; color: #39285e;">Add to personal training</a></p>';
+
                             }
                             ?>
                         </div>

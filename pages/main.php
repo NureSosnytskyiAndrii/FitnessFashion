@@ -86,7 +86,7 @@ if ($result->num_rows > 0) {
                                 <div class="card">
                                     <div class="card-header" id="headingOne<?php echo $row["trainer_id"]; ?>">
                                         <h2 class="mb-0">
-                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                            <button class="btn btn-link" type="button" style="color: #39285e;" data-toggle="collapse"
                                                     data-target="#collapseOne<?php echo $row["trainer_id"]; ?>"
                                                     aria-expanded="true"
                                                     aria-controls="collapseOne<?php echo $row["trainer_id"]; ?>">
@@ -118,7 +118,7 @@ if ($result->num_rows > 0) {
 }
 ?>
         </div>
-        <div style="display:flex; justify-content: center; margin-bottom: 30px;"><a type="button" class="btn btn-primary"  href="/?page=exercises_categories">Exercises for you &nbsp; <img src="../src/free-icon-sport-6106456%20(1).png"/></a></div>
+        <div style="display:flex; justify-content: center; margin-bottom: 30px;"><a type="button" class="btn" style="border: 2px solid #c8aaf2; color: #39285e;"  href="/?page=exercises_categories">Exercises for you &nbsp; <img src="../src/free-icon-sport-6106456%20(1).png"/></a></div>
         <h2 class="about-us-title text-center">About us</h2>
         <p class="about-us-text mb-2 mt-2">
             Our company provides high-quality online training for all sports. We strive
