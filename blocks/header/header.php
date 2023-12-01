@@ -38,6 +38,9 @@ use System\classes\User;
     <nav class="menu" id="menu">
     <ul class="menu__list">
     <li class="menu__item">
+        <a class="menu__link mr-4 ml-4" href="/?page=gym_page">
+            Find a gym
+        </a>
         <a class="menu__link mr-4 ml-4" href="#">
            Training
         </a>

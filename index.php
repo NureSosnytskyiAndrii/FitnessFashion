@@ -93,6 +93,9 @@ if (isset($_GET['page'])) {
                 require_once "pages/exercises_page/personal_trainings.php";
             }
             break;
+        case "gym_page":
+            require_once "pages/gym_page/gym_page.php";
+            break;
         default:
             require_once "pages/404.php";
     }
