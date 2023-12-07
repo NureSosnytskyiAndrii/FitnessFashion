@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'exersice.dart';
+import 'tips.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -119,7 +120,7 @@ class HomePage extends StatelessWidget {
                        onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ExercisesPage()),
+                            MaterialPageRoute(builder: (context) => TipsPage()),
                           );
                         },
                         child: Text(

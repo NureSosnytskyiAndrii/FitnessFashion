@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'exersice_page.dart';
 
 class ExercisesPage extends StatelessWidget {
   final List<String> types = [
-    'Exercise for arms',
-    'Exercise for legs',
-    'Exercise for shoulders',
-    'Exercise for chest',
-    'Exercise for back',
-    'Exercise for fists',
-    "Exercise for neck",
+    'Easy exercises',
+    'Average exercises',
+    'Hard exercises',
   ];
 
   @override
@@ -33,15 +29,18 @@ class ExercisesPage extends StatelessWidget {
                 ),
                 child: Text(
                   types[index],
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, 
+                  color: Color(0xffDEE2E6)),
                 ),
                 onPressed: () {
-                //   Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => NewPage(inputString: types[index], number: index,),
-                //     ),
-                //   );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ExcersicePage(
+                        type: index == 0? "easy" : 
+                        index == 1? "normal" : "hard"),
+                    ),
+                  );
                 },
               ),
             );
