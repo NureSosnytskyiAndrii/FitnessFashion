@@ -82,7 +82,7 @@ if (isset($_SESSION['username']) && $_SESSION['uid']) {
                                 <option value="in_progress">In Progress</option>
                                 <option value="done">Done</option>
                             </select>
-                            <input type="submit" name="submit" value="Save">
+                            <input type="submit" class="btn btn-sm btn-success" name="submit" value="Save">
                         </form>
                     <?php endif; ?>
                 </td>

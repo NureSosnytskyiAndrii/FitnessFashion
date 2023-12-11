@@ -67,6 +67,9 @@ if (isset($_GET['page'])) {
                         require_once "pages/trainer_page/trainer_user_view.php";
                     } elseif ($action == 'trainees') {
                         require_once "pages/trainer_page/trainees.php";
+                    } elseif ($action == 'all_users') {
+                        require_once "pages/trainer_page/all_users.php";
+                        break;
                     }
                 }
             }
