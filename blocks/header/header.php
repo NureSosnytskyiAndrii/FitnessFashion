@@ -67,6 +67,7 @@ use System\classes\User;
                 <a class="dropdown-item" href="../../logout.php">Log out</a>
                 <a class="dropdown-item" href="/?page=profile_settings">Profile settings</a>
                 <a class="dropdown-item" href="/?page=personal_trainings">Personal trainings</a>
+                <a class="dropdown-item" href="/?page=chat">Chat</a>
                 <?php
                 if ($user['user_role'] == "admin") {
                     ?>

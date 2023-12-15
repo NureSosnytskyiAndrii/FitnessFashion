@@ -96,6 +96,13 @@ if (isset($_GET['page'])) {
                 require_once "pages/exercises_page/personal_trainings.php";
             }
             break;
+        case "chat":
+            $user_obj = new User();
+            $user = $user_obj->getUserById($_SESSION['uid']);
+            if (($user['user_role'] == "user") || ($user['user_role'] == "trainer") || ($user['user_role'] == "moder")) {
+                require_once "pages/chat_page/chat.php";
+            }
+            break;
         case "gym_page":
             require_once "pages/gym_page/gym_page.php";
             break;
