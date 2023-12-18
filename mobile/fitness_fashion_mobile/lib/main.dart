@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:fitness_fashion_mobile/exersice.dart';
+import 'package:fitness_fashion_mobile/exersice_page.dart';
+import 'package:fitness_fashion_mobile/shedule.dart';
 import 'package:flutter/material.dart';
 import 'reg.dart';
 
@@ -22,7 +25,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
       title: 'Fitness Fashion',
-      home: RegistrationPage(),
+      home: 
+      //ExcersicePage(type: "easy")
+      //ExercisesPage()
+      Shedule()
+      //RegistrationPage(),
     );
   }
 }
