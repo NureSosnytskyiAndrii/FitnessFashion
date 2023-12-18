@@ -1,3 +1,5 @@
+import 'package:fitness_fashion_mobile/shedule.dart';
+import 'package:fitness_fashion_mobile/training_page.dart';
 import 'package:flutter/material.dart';
 import 'exersice.dart';
 import 'tips.dart';
@@ -8,7 +10,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff6C757D),
-        title: Text('Fitness Fashion'),
+        title: const Center(child: Text('Fitness Fashion')),
       ),
       body: Column(
         children: [
@@ -56,7 +58,7 @@ class HomePage extends StatelessWidget {
                        onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ExercisesPage()),
+                            MaterialPageRoute(builder: (context) => TrainingPage()),
                           );
                         },
                         child: Text(
@@ -93,7 +95,7 @@ class HomePage extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ExercisesPage()),
+                            MaterialPageRoute(builder: (context) => Shedule()),
                           );
                         },
                         child: Text(
@@ -105,6 +107,7 @@ class HomePage extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xff6C757D),
+                          
                         ),
                       ),
                     ],

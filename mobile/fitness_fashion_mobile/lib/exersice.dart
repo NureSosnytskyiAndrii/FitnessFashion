@@ -13,7 +13,7 @@ class ExercisesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffDEE2E6),
       appBar: AppBar(
-        title: Text('Best Exersices'),
+        title: const Center(child: Text('Best Exersices')),
         backgroundColor: Color(0xff6C757D),
       ),
       body: Center(

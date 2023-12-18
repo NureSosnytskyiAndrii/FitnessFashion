@@ -54,7 +54,7 @@ class _TipsPageState extends State<TipsPage> {
   Widget build(BuildContext context) => Scaffold(
       backgroundColor: const Color(0xffDEE2E6),
       appBar: AppBar(
-        title: const Text('Helth tips'),
+        title: const Center(child:  Text('Helth tips')),
         backgroundColor: const Color(0xff6C757D),
       ),
       body: Center(

@@ -53,7 +53,7 @@ class _ExcersicePageState extends State<ExcersicePage> {
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Color(0xffDEE2E6),
         appBar: AppBar(
-          title: Text(widget.type),
+          title: Center (child: Text(widget.type)),
           backgroundColor: Color(0xff6C757D),
         ),
         body: Center(

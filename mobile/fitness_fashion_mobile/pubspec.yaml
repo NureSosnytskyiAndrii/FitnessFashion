@@ -39,6 +39,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   mysql1: ^0.20.0
   crypto: ^3.0.3
+  table_calendar: ^3.0.9
   
 flutter_icons:
   image_path: "assets/images/logo.png"

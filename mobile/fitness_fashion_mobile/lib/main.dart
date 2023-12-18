@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:fitness_fashion_mobile/exersice.dart';
 import 'package:fitness_fashion_mobile/exersice_page.dart';
 import 'package:fitness_fashion_mobile/shedule.dart';
+import 'package:fitness_fashion_mobile/training_page.dart';
 import 'package:flutter/material.dart';
 import 'reg.dart';
 
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
       home: 
       //ExcersicePage(type: "easy")
       //ExercisesPage()
-      Shedule()
-      //RegistrationPage(),
+      //TrainingPage()
+      //Shedule()
+      RegistrationPage(),
     );
   }
 }
