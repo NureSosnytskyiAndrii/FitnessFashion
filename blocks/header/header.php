@@ -42,12 +42,6 @@ use System\classes\User;
         <a class="menu__link mr-4 ml-4" href="/?page=gym_page">
             Find a gym
         </a>
-        <a class="menu__link mr-4 ml-4" href="#">
-           Training
-        </a>
-        <a class="menu__link mr-4 ml-4" href="#">
-            FAQ
-        </a>
         <a class="menu__link mr-4 ml-4" href="/?page=health_tips_page">
             Health tips
         </a>

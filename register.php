@@ -5,20 +5,28 @@ use System\classes\User;
 require_once 'system/config.php';
 require_once 'blocks/header/header.php';
 
-if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['confirm_password'])){
-    if($_POST['password'] !== $_POST['confirm_password']){
+if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['confirm_password'])) {
+    if ($_POST['password'] !== $_POST['confirm_password']) {
         echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Error password not equals
 <button type='button' class='close' data-dismiss='alert' aria-label='Close' 
 </button></div>";
-    }else{
+    } else {
 
         $username = $_POST['login'];
         $password = $_POST['password'];
         $email = $_POST['email'];
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
-        $user_obj = new User();
-       echo $user_obj->registerUser($username,$password,$first_name,$last_name, $email,'user');
+
+        if (empty($username) || empty($password) || empty($email) || empty($first_name) || empty($last_name)){
+            echo "<div class='alert alert-danger alert-dismissible fade show '>All fields are required.
+ <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+ <span aria-hidden='true'>&times;</span>
+  </button></div>";
+        } else {
+            $user_obj = new User();
+            echo $user_obj->registerUser($username, $password, $first_name, $last_name, $email, 'user');
+        }
     }
 }
 
@@ -76,6 +84,3 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email'])
     </div>
    </div>
 </div>
-<?php
-//require_once 'blocks/footer.php';
-?>

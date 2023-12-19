@@ -18,19 +18,27 @@ if (isset($_SESSION['username']) && $_SESSION['uid']) {
         <div class="col-md-8">
             <h2>Branch: <span id="branch-name"></span></h2>
         </div>
-        <div class="col-md-4">
-            <button class="btn btn-secondary" onclick="changeBranch()">Change Branch</button>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <button class="btn btn-sm" style="border: 2px solid #c8aaf2; color: #39285e;" onclick="viewAllBranches()" ondblclick="hideAllBranches()">View All Branches</button>
+            <button class="btn btn-sm" style="border: 2px solid #c8aaf2; color: #39285e;"  onclick="changeBranch()"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
         </div>
     </div>
 
-    <ul id="message-list"></ul>
+    <div id="branch-cards" class="row mt-3"></div>
+
+    <div class="col-9" id="message-container">
+        <ul id="message-list"></ul>
+    </div>
 
     <div class="row">
         <div class="col-md-8">
-            <input type="text" id="message-input" class="form-control" placeholder="Type your message">
+            <input type="text" id="message-input" class="form-control ml-2" placeholder="Type your message">
         </div>
         <div class="col-md-4">
-            <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+            <button class="btn" style="background-color:#be9ded; color: #39285e;" onclick="sendMessage()">Send <span><i class="fas fa-arrow-up"></i></span></button>
         </div>
     </div>
 </div>
@@ -85,9 +93,9 @@ if (isset($_SESSION['username']) && $_SESSION['uid']) {
             const messageItem = document.createElement("li");
             messageItem.classList.add("message");
             const avatarHTML = message.senderAvatar ? `<img class="avatar" src="${message.senderAvatar}" alt="User Avatar">` : '';
-            const deleteBtnHTML = (isCurrentUser(message) || isModerator()) ? `<button class="delete-btn" onclick="deleteMessage(${index})">Delete</button>` : '';
+            const deleteBtnHTML = (isCurrentUser(message) || isModerator()) ? `<button class="delete-btn" onclick="deleteMessage(${index})"><i class="fas fa-trash-alt"></i></button>` : '';
             //const userStatusHTML = ((isCurrentUser(message) && isModerator()) || (isCurrentUser(message) && isTrainer())) ? `<div><strong class="text-warning">${getUserStatus()}</strong></div>` : '';
-            messageItem.innerHTML = `<div>${avatarHTML}<strong>${message.senderFirstName} ${message.senderLastName}</strong>(${message.timestamp}): ${message.text} ${deleteBtnHTML}</div>`;
+            messageItem.innerHTML = `<div>${avatarHTML}<strong>${message.senderFirstName} ${message.senderLastName}</strong>(${message.timestamp}): ${message.text} </div>${deleteBtnHTML}`;
             messageList.appendChild(messageItem);
         });
     }
@@ -129,4 +137,34 @@ if (isset($_SESSION['username']) && $_SESSION['uid']) {
         document.getElementById("branch-name").innerText = newBranch;
         loadMessages(newBranch);
     }
+
+
+    function viewAllBranches() {
+        const branchCardsContainer = document.getElementById("branch-cards");
+        branchCardsContainer.removeAttribute("hidden", true);
+        branchCardsContainer.innerHTML = "";
+
+        // Retrieve all branches from localStorage
+        const allBranches = Object.keys(localStorage)
+            .filter(key => key.startsWith('messages_'))
+            .map(key => key.replace('messages_', ''));
+
+        allBranches.forEach(branch => {
+            const branchCard = document.createElement("div");
+            branchCard.classList.add("card", "m-2");
+            branchCard.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title">${branch}</h5>
+                    <button class="btn btn-secondary" onclick="loadMessages('${branch}')">Load Messages</button>
+                </div>
+            `;
+            branchCardsContainer.appendChild(branchCard);
+        });
+    }
+
+    function hideAllBranches() {
+        const branchCardsContainer = document.getElementById("branch-cards");
+        branchCardsContainer.setAttribute("hidden", true);
+    }
+
 </script>

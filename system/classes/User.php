@@ -38,18 +38,25 @@ class User{
      * @param $password string User real password
      * @return void Print result on screen or redirect to main page if user exists
      */
-    public function authUser($username, $password){
+    public function authUser($username, $password)
+    {
         global $mysqli;
 
         $hashed_password = md5($password);
-        $result = $mysqli->query("SELECT * FROM users WHERE username = '".$username."' AND hashed_password = '".$hashed_password."'") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * FROM users WHERE username = '" . $username . "' AND hashed_password = '" . $hashed_password . "'") or die($mysqli->error);
         $user = $result->fetch_assoc();
 
-        if(!empty($user)){
+        if (!empty($user) && ($user['is_banned'] === "0")) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['uid'] = $user['user_id'];
             echo "<script>location.replace('/?page=main')</script>";
-        }else{
+        } else if (!empty($user) && ($user['is_banned'] === "1")) {
+            echo "<div class='alert alert-danger alert-dismissible fade show '>This user was banned!
+ <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+ <span aria-hidden='true'>&times;</span>
+  </button></div>";
+        }
+        else if (empty($user)) {
             echo "<div class='alert alert-danger alert-dismissible fade show '>Username or Password not correct
  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
  <span aria-hidden='true'>&times;</span>

@@ -47,7 +47,7 @@ require_once 'blocks/header/header.php';
     <h2 class="text-white">Sign in</h2>
     <form action="" method="post">
         <div class="form-group">
-            <label for="InputLogin">Email</label>
+            <label for="InputLogin">Login</label>
             <input type="text" class="form-control" id="InputLogin" placeholder="Enter login" name="login">
         </div>
         <div class="form-group">
