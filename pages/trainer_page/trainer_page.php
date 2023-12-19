@@ -11,6 +11,7 @@
             <li class="list-group-item"><a href="/?page=trainer_page&action=add">Add new training</a></li>
             <li class="list-group-item"><a href="/?page=trainer_page&action=view">View trainings</a></li>
             <li class="list-group-item"><a href="/?page=trainer_page&action=trainees">View list of trainees</a></li>
+            <li class="list-group-item"><a href="/?page=trainer_page&action=all_users">View all users</a></li>
         </ul>
     </div>
 </div>

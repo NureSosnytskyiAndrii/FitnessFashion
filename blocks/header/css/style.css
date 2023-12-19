@@ -34,7 +34,7 @@ body {
 }
 
 .header {
-    background-color: #d0cdcd;
+    background-color: #864ed4;
     box-shadow: 0px 4px 21px -1px rgba(34, 60, 80, 0.13);
 }
 
@@ -124,6 +124,11 @@ body {
 
 .menu__link {
     font-size: 16px;
+    color: #39285e;
+}
+.menu__link:hover {
+    color: #2c112c;
+    text-decoration: none;
 }
 
 @media (max-width: 992px) {

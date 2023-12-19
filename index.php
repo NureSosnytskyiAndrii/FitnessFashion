@@ -67,6 +67,9 @@ if (isset($_GET['page'])) {
                         require_once "pages/trainer_page/trainer_user_view.php";
                     } elseif ($action == 'trainees') {
                         require_once "pages/trainer_page/trainees.php";
+                    } elseif ($action == 'all_users') {
+                        require_once "pages/trainer_page/all_users.php";
+                        break;
                     }
                 }
             }
@@ -74,7 +77,35 @@ if (isset($_GET['page'])) {
         case "profile_settings":
             require_once "pages/user_profile/profile_view.php";
             break;
-
+        case "profile_edit":
+            require_once "pages/user_profile/profile_edit.php";
+            break;
+        case "health_tips_page":
+            require_once "pages/health_tips_page.php";
+            break;
+        case "exercises_categories":
+            require_once "pages/exercises_page/categories.php";
+            break;
+        case "exercises_page":
+            require_once "pages/exercises_page/exercises_page.php";
+            break;
+        case "personal_trainings":
+            $user_obj = new User();
+            $user = $user_obj->getUserById($_SESSION['uid']);
+            if ($user['user_role'] == "user") {
+                require_once "pages/exercises_page/personal_trainings.php";
+            }
+            break;
+        case "chat":
+            $user_obj = new User();
+            $user = $user_obj->getUserById($_SESSION['uid']);
+            if (($user['user_role'] == "user") || ($user['user_role'] == "trainer") || ($user['user_role'] == "moder")) {
+                require_once "pages/chat_page/chat.php";
+            }
+            break;
+        case "gym_page":
+            require_once "pages/gym_page/gym_page.php";
+            break;
         default:
             require_once "pages/404.php";
     }

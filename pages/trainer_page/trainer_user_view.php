@@ -3,6 +3,28 @@ global $mysqli;
 
 use System\classes\User;
 
+if (isset($_GET['do']) && $_GET['do'] === 'delete') {
+
+    $training_id_to_delete = $_GET['training_id'];
+
+    $delete_query = "DELETE FROM training WHERE training_id = ?";
+
+    $stmt = $mysqli->prepare($delete_query);
+    $stmt->bind_param("i", $training_id_to_delete);
+
+    if ($stmt->execute()) {
+        echo '<div style="margin-top: 5px;" class="alert alert-danger alert-dismissible fade show" role="alert">
+        Training was deleted.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+        </button>
+        </div>';
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+}
+
 ?>
 
 
@@ -19,6 +41,7 @@ use System\classes\User;
                         <tr>
                             <th>Training name</th>
                             <th>Training description</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,6 +56,7 @@ use System\classes\User;
                             <tr>
                                 <td><?= $training->training_name; ?></td>
                                 <td><?= $training->training_description; ?></td>
+                                <td><a type="button" class="btn btn-danger" href="/?page=trainer_page&action=view&do=delete&training_id=<?= $training->training_id; ?>">Delete training</a></td>
                             </tr>
                         <?php } ?>
                         </tbody>

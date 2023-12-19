@@ -58,7 +58,7 @@ if(isset($_GET['action']) && $_GET['action'] == "unban"){
                                 <td>
                                     <a href="/?page=user_view&id=<?= $user->user_id; ?>" class="btn btn-light">View</a>
                                     <?php
-                                    if ($user->user_role !== 'moder') {
+                                    if (($user->user_role !== 'moder') && ($user->user_role !== 'admin')) {
                                         ?>
                                         <a href="/?page=moder_page&action=ban&id=<?= $user->user_id; ?>"
                                            class="btn btn-danger">Ban</a>
